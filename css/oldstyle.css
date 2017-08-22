@@ -1,0 +1,206 @@
+body {
+/*  background: #222;*/
+  background: #2a2828;
+  font-family: Futura, sans-serif;
+}
+
+
+.wrap {
+  margin-left: 5%;
+  margin-top: 20%;
+  width: 800px;
+  /* goofy */
+/*	perspective: 800px;
+	perspective-origin: 50% -750px;
+*/
+/* regular cube */
+/*  perspective: 800px;
+	perspective-origin: 50% 100px;
+*/
+  /* trippy cube */
+    perspective: 200px;
+  	perspective-origin: 50% 100px;
+
+}
+
+.cube {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+  /* normal but buggy */
+  /*border: 1px solid rgb(255,165,0);
+*/
+
+  /* just weird */
+  border: 25px dashed rgb(255,165,0);
+}
+
+
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+}
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+/*  background-color: rgb(255,165,0);
+  opacity: 0.2;
+*/
+/*background-color: red;
+animation-name: example;
+animation-duration: 15s;*/
+}
+.front {
+	transform: translateZ(100px);
+}
+
+@keyframes spin {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(360deg); }
+}
+
+@keyframes move {
+  from { transform: rotateZ(0); }
+	to { transform: rotateZ(360deg); }
+}
+
+@keyframes example {
+0%   {background-color: red; left:0px;}
+50%  {background-color: yellow; left:1000px;}
+100% {background-color: red; left:0px;}
+}
+
+.cube {
+	animation: spin 15s infinite linear;
+/*  animation:  example 15s infinite linear;*/
+}
+
+
+#canvas, #text {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#text {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  font-size: 8vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+}
+
+#text h1 {
+  text-shadow: 0px 10px 10px #4d4d4d;
+  opacity: 0.5;
+  font-family: open-sans, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5em;
+  background-color: black;
+  width: 100%;
+  margin-left: 40%;
+
+}
+
+
+.load {
+    position:absolute;
+    top:calc(50% - 30px);
+    left:calc(20% - 30px);
+    width:70px;
+    height:70px;
+}
+.block {
+    position:relative;
+    height:20px;
+    width:20px;
+    display:inline-block;
+    background:gold;
+    transition:all 0.8s;
+    animation: rot 5s linear infinite;
+}
+.block:nth-child(1) {
+    animation-delay:3s;
+}
+.block:nth-child(2) {
+    animation-delay:1.5s;
+    animation: rot 15s linear infinite;
+}
+.block:nth-child(3) {
+    animation-delay:2s;
+}
+.block:nth-child(4) {
+    animation-delay:0.2s;
+}
+.block:nth-child(5) {
+    animation-delay:4s;
+}
+.block:nth-child(6) {
+    animation-delay:2s;
+    animation: rot 7s linear infinite;
+}
+.block:nth-child(7) {
+    animation-delay:0.4s;
+}
+.block:nth-child(8) {
+    animation-delay:1.5s;
+    animation: rot 6s linear infinite;
+}
+.block:nth-child(9) {
+    animation-delay:25s;
+    animation: rot 8s linear infinite;
+}
+
+@keyframes rot {
+    0% {
+        transform:none;
+    }
+    20% {
+        transform:rotateZ(-90deg) rotateY(180deg);
+    }
+    40% {
+        background:chocolate;
+        transform:none;
+    }
+    60% {
+        background:white
+    }
+    80% {
+        background:cornflowerblue;
+    }
+    90% {
+        transform:none;
+        background:#222;
+    }
+}

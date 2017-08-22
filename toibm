@@ -1,0 +1,12 @@
+INFO [06-17|02:25:10] Imported new state entries               count=32  elapsed=48.819ms  processed=119 pending=113
+WARN [06-17|02:25:10] Rolled back headers                      count=167 header=1024->1024 fast=3072->3072 block=0->0
+WARN [06-17|02:25:10] Synchronisation failed, dropping peer    peer=eca9a3a792bb0edd err="retrieved hash chain is invalid"
+
+
+
+output. stops on that spot...  Suggestions?
+I did have to alter the genesis.json file due to version... but it seems to have synced up to that point block 3072 but stopped there. other attemps have me syncing to differnet place
+areound the same area.
+
+
+quorum raspberry pi

@@ -1,0 +1,147 @@
+body {
+/*  background: #222;*/
+  background: #2a2828;
+  margin: 0rem;
+  min-height: 100vh;
+  font-family: Futura, sans-serif;
+}
+
+#canvas, #text {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#text {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 8vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+#text h1 {
+  text-shadow: 0px 10px 10px #4d4d4d;
+  opacity: 0.5;
+  font-family: open-sans, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.5em;
+  background-color: black;
+  width: 100%;
+}
+
+#test{
+    background-image: url("raspberry-pi-logo.png");
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid rgb(255,165,0); /* Blue */
+    border-bottom: 16px solid #2a2828; /* Blue */
+    border-right: 16px solid #2a2828; /* Blue */
+    border-left: 16px solid #2a2828; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+
+.loader2 {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid rgb(255,165,0); /* Blue */
+    border-bottom: 16px solid rgb(255,165,0); /* Blue */
+    border-right: 16px solid rgb(255,165,0); /* Blue */
+  /*  border-left: 16px solid #2a2828; /* Blue */
+    border-left: 16px solid #2a2828; /* Blue */
+    padding: 50px;
+    text-align: center;
+    width: 50%;
+/*    border-radius: 50%;
+/*    width: 120px;
+    height: 120px; */
+    animation: fadeout 2s linear infinite;*/
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes border-pulsate {
+/*    0% { border-left-color: rgba(255, 0, 0, 1); }
+    50% { border-left-color: rgba(255, 0, 0, 0); }
+    50%  { box-shadow: 0 0 10px rgba(255, 0, 0, 0);}
+    100% { border-left-color: rgba(255, 0, 0, 1); }
+*/
+0% { border-color: rgb(139,0,0,1); }
+50% { border-color: rgb(139,0,0,0); }
+
+50%  { box-shadow: 0 0 400px rgba(255, 0, 0, 0);}
+100% { border-color: rgb(139,0,0,0); }
+/*    10% { border-right-color: rgba(255, 0, 0, 1); }
+    60% { border-right-color: rgba(255, 0, 0, 0); }
+
+
+/*    0%   { border-color: rgba(0, 255, 255, 1); }
+    50% { border-color: rgba(0, 255, 255, 0); }
+    100%   { border-color: rgba(0, 255, 255, 1); }*/
+}
+
+@keyframes border-pulsategreen {
+/*    0% { border-left-color: rgba(255, 0, 0, 1); }
+    50% { border-left-color: rgba(255, 0, 0, 0); }
+    50%  { box-shadow: 0 0 10px rgba(255, 0, 0, 0);}
+    100% { border-left-color: rgba(255, 0, 0, 1); }
+*/
+0% { border-color: rgb(95,186,125,1); }
+50% { border-color: rgb(95,186,125,0); }
+
+50%  { box-shadow: 0 0 400px rgba(255, 0, 0, 0);}
+100% { border-color: rgb(95,186,125,0); }
+/*    10% { border-right-color: rgba(255, 0, 0, 1); }
+    60% { border-right-color: rgba(255, 0, 0, 0); }
+
+
+/*    0%   { border-color: rgba(0, 255, 255, 1); }
+    50% { border-color: rgba(0, 255, 255, 0); }
+    100%   { border-color: rgba(0, 255, 255, 1); }*/
+}
+
+
+img {
+    display: block;
+    padding: 50px;
+    padding-left: 100px;
+    margin: 20px auto;
+    border: 20px solid cyan;
+    border-radius: 25%;
+    animation: border-pulsate 3s infinite;
+    outline: none;
+    border-color: rgb(139,0,0);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 1);
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

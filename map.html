@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Polytope Marketplace</title>
+
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	 <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
+		<link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+		<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+
+
+<script type="text/javascript">
+
+
+ </script>
+
+ <script>
+ $(document).ready(function(){
+     $("#adminButton").click(function(){
+         $(".adminDiv").toggle(1000);
+     });
+ });
+ </script>
+
+
+
+<script>
+$(document).ready(function(){
+/*    $('#slide').click(function(){
+    var hidden = $('.device');
+    if (hidden.hasClass('visible')){
+        hidden.animate({"left":"-1000px"}, "slow").removeClass('visible');
+    } else {
+        hidden.animate({"left":"0px"}, "slow").addClass('visible');
+    }
+	});*/
+});
+
+</script>
+
+</head>
+
+
+
+<body onload="initialize()">
+
+	<header>
+
+		<div id="logocolor"></div>
+		<div id="head">POLYTOPE
+		</div>
+	</header>
+
+
+		 <div id="toner-lite" class="map"></div>
+		 <!--div id="terrain" class="map"></div>
+		 <div id="watercolor" class="map"></div-->
+
+		 <button type="button" id="adminButton">...</button>
+
+<!-- device listings start -->
+		 <div class="device" id="device">
+			 <h2>Device Name:</h2>
+			 <p>Offline Pi</p>
+			 <h2>Services:</h2>
+			 <p>Software Defined Radio: Not Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Netspeed: Not Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Camera: Not Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Location: Active<br/>
+			 		Price: 0.01BTC</p>
+					<p><a href="#" onclick="show('removeDevice')">Subscribe</a></p>
+
+		 </div>
+
+
+		 <div class="device1">
+			 <h2>Device Name:</h2>
+			 <p>Unclaimed Pi</p>
+			 <h2>Services:</h2>
+			 <p>Software Defined Radio: Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Netspeed: Not Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Camera: Not Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Location: Active<br/>
+			 		Price: 0.01BTC</p>
+					<p><a href="#" onclick="show('removeDevice1');changeMarker();">Subscribe</a></p>
+		 </div>
+
+		 <div class="device2">
+			 <h2>Device Name:</h2>
+			 <p>Claimed PI</p>
+			 <h2>Services:</h2>
+			 <p>Software Defined Radio: Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Netspeed: Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Camera: Active<br/>
+			 		Price: 0.01BTC</p>
+			 <p>Location: Active<br/>
+			 		Price: 0.01BTC</p>
+					<p><a href="#" onclick="show('removeDevice2');changeMarker3();">Subscribe</a></p>
+		 </div>
+
+		 <!-- device listings stop -->
+
+		 <div class="adminDiv">
+			 <h1>My Devices:</h1>
+
+			 <div class="adminDeviceCard" id="removeDevice">
+					 <h2><a href="#" onclick="onClickShow('device');">Offline PI</a> <a href="#" id="remove" onclick="hide('removeDevice')">Remove</a></h2>
+					 <h3>Services:</h3>
+					 <p>Software Defined Radio: Active<br/>
+					 		Price: 0.01BTC</p>
+					 <p>Netspeed: Not Active<br/>
+					 		Price: 0.01BTC</p>
+					 <p>Camera: Not Active<br/>
+					 		Price: 0.01BTC</p>
+					 <p>Location: Active<br/>
+					 		Price: 0.01BTC</p>
+				</div>
+
+				<div class="adminDeviceCard" id="removeDevice2">
+ 					<h2><a href="#" onclick="onClickShow('device2')">Claimed PI</a> <a href="#" id="remove" onclick="hide('removeDevice2');changeMarker2();">Remove</a></h2>
+ 					<h3>Services:</h3>
+ 					<p>Software Defined Radio: Active<br/>
+ 						 Price: 0.01BTC</p>
+ 					<p>Netspeed: Not Active<br/>
+ 						 Price: 0.01BTC</p>
+ 					<p>Camera: Not Active<br/>
+ 						 Price: 0.01BTC</p>
+ 					<p>Location: Active<br/>
+ 						 Price: 0.01BTC</p>
+ 			 </div>
+
+
+			 <div class="adminDeviceCard" id="removeDevice1">
+					<h2><a href="#" onclick="onClickShow('device1')">Unclaimed PI</a> <a href="#" id="remove" onclick="hide('removeDevice1');changeMarker1();">Remove</a></h2>
+					<h3>Services:</h3>
+					<p>Software Defined Radio: Active<br/>
+						 Price: 0.01BTC</p>
+					<p>Netspeed: Not Active<br/>
+						 Price: 0.01BTC</p>
+					<p>Camera: Not Active<br/>
+						 Price: 0.01BTC</p>
+					<p>Location: Active<br/>
+						 Price: 0.01BTC</p>
+			 </div>
+
+		 </div>
+
+
+	<footer>
+
+		<script>
+				</script>
+				<p>hahhaahha</p>
+			<button id="hide">hide</button>
+			<button id="show">show</button>
+	</footer>
+</body>
+</html>

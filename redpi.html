@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pi Logo Red Light</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+      <!--link rel="stylesheet" href="css/style2.css"-->
+
+  <style>
+
+  body {
+    background: #2a2828;
+  }
+
+  @keyframes border-pulsate {
+  50%  { box-shadow: 0 0 400px rgba(255, 0, 0, 0);}
+  }
+
+  @keyframes border-pulsategreen {
+
+  50%  { box-shadow: 0 0 400px rgba(0, 153, 51, 0);}
+  }
+
+  img {
+      display: block;
+      padding: 50px;
+      padding-left: 80px;
+      margin: 20px auto;
+      border: 20px solid cyan;
+      border-radius: 25%;
+      animation: border-pulsate 3s infinite;
+      outline: none;
+/*      border-color: rgb(34,139,34);*/
+      border-color: rgb(139,0,0);
+
+      box-shadow: 0 0 10px rgba(255, 0, 0, 1);
+  }
+
+  </style>
+</head>
+
+<body>
+  <img src="raspberry-pi-logo.png">
+</body>
+</html>
