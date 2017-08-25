@@ -238,8 +238,8 @@ var tool3 = {permanent: true, direction:"center", offset: new L.Point(5,80)};
 // &#128251 radio
 //value="+onClickShow('device')+"
 //hide(target)
-   testMarker.addTo(map).bindTooltip("<div class='unicode'><a href='http://172.16.30.98:8073/' target='_self'><img src='img/radio_on.png' width='40px'> $3</a></div>"
-  +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(-40,70)}).openTooltip();
+   testMarker.addTo(map).bindTooltip("<div class='unicode'><a href='http://172.16.30.98:8073/' target='_self'><img src='img/radio_on.png' width='40px'></a><br/><span class='unicodeText'>$4</span></div><div class='unicode'><img src='img/video_off.png' width='40px'><br/><span class='unicodeText'></span></div><div class='unicode'><img src='img/audios_off.png' width='40px'><br/><span class='unicodeText'></span></div>"
+  +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(5,5)}).openTooltip();
      console.log("larger stroke border");
  }
 
