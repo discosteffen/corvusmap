@@ -317,7 +317,7 @@ html, body, #map {
 		 .markerIconGreen{
 			 background-color: rgba(0,255,0, 0.9);
 			 border-radius: 50%;
-			 border: 1px dotted gray;
+			 border: 0px dotted gray;
 			 box-shadow: 0 0 0 10px rgba(0,255,0, 0.8);
 		   animation: pulseGreen 2s infinite;
 		 }
@@ -325,26 +325,47 @@ html, body, #map {
 		 .markerIconOrange{
 			 background-color: rgba(255,165,0, 0.9);
 			 border-radius: 50%;
-			 border: 1px dotted gray;
+			 border: 0px dotted gray;
 			 box-shadow: 0 0 0 10px rgba(255,165,0, 0.8);
 		   animation: pulseOrange 2s infinite;
 		 }
 
      .markerIconRadius{
-       background-color: rgba(255,165,0, 0.5);
+       /*adjust border radius on onclick */
+       background-color: rgba(88,89,91, 0.9);
 			 border-radius: 50%;
-			 border: 1px dotted gray;
+			 border: 0px dotted gray;
 /*			 box-shadow: 0 0 0 10px rgba(255,165,0, 0.8);*/
 /*		   animation: pulseOrange 2s infinite; */
      }
 
      .unicode{
-       background: rgba(255, 255, 255, 1);
-       border-bottom: 1px solid black;
-       width: 90%;
+       font-size: 0.5em;
+       float: left;
+/*       background-color: black;*/
+/*       background: rgba(255, 255, 255, 0.8);*/
+/*       border-bottom: 1px solid black;
+       width: 90%;*/
+       background-color: rgba(255,255,255, 0.0);
+       width: 35px;
+       padding-left: 5px;
+       border-radius: 30%;
+       border: 0px solid green;
+       margin-right: 5px;
      }
+
      .unicodeText{
+       color: white;
+       padding-left: 11px;
        font-size: 12px;
+     }
+
+     .unicode a{
+       color: #ffffff;
+     }
+
+     .unicode a:hover{
+       color: #4286f4;
      }
 
 

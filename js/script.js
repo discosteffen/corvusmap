@@ -34,22 +34,23 @@ var icon3 = L.divIcon({
     popupAnchor: [10, 0],
     shadowSize: [0, 0],
 //*		    className: 'animated-icon my-icon-id' */
-    className: 'markerIconOrange'
+    className: 'markerIconGreen'
 })
 
 
 var icon4 = L.divIcon({
-    iconSize: [250, 250],
-    iconAnchor: [135, 125],
+    iconSize: [200, 200],
+    iconAnchor: [105, 105],
     popupAnchor: [0, 0],
     shadowSize: [0, 0],
 //*		    className: 'animated-icon my-icon-id' */
     className: 'markerIconRadius'
 })
 
-var ll = L.latLng(27.9591535, -82.4463063) // Tampa
+var ll = L.latLng(25.7824617, -80.3012152) // Tampa
 var ll2 = L.latLng(40.7133866, -74.1273178) // new York
-var ll3 = L.latLng(25.7824617, -80.3012152) // Miami
+//var ll3 = L.latLng(25.7824617, -80.3012152) // Miami
+var ll3 = L.latLng(27.9591535, -82.4463063) // Tampa
 
 var map;
 
@@ -209,10 +210,10 @@ title: '!'
    }
  }
 
- var testMarker = L.marker(ll3, {
-    icon: icon4,
-    title: ''
-  });
+   var testMarker = L.marker(ll3, {
+      icon: icon4,
+      title: ''
+    });
 
   var testMarker1 = L.marker(ll, {
      icon: icon4,
@@ -224,8 +225,6 @@ title: '!'
       title: ''
     });
 
-
-
 var tooltips;
 var tool1 = {permanent: true, direction:"center", offset: new L.Point(90,0)};
 var tool2 = {permanent: true, direction:"center", offset: new L.Point(-75,0)};
@@ -236,11 +235,11 @@ var tool3 = {permanent: true, direction:"center", offset: new L.Point(5,80)};
    testMarker1.remove();
 // is it clickable>
 //
-
+// &#128251 radio
 //value="+onClickShow('device')+"
 //hide(target)
-   testMarker.addTo(map).bindTooltip("<div class='unicode'>&#128644; &nbsp;&nbsp;&nbsp; <span class='unicodeText'><a href='http://172.16.30.126:8073' target='_self'>RADIO</a></span></div> <div class='unicode'>&#128251;  &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$4</span></div><div class='unicode'>&#128247; &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$4</span></div>"
-  +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(10,0)}).openTooltip();
+   testMarker.addTo(map).bindTooltip("<div class='unicode'><a href='http://172.16.30.98:8073/' target='_self'><img src='img/radio_on.png' width='40px'> $3</a></div>"
+  +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(-40,70)}).openTooltip();
      console.log("larger stroke border");
  }
 
@@ -250,8 +249,8 @@ var tool3 = {permanent: true, direction:"center", offset: new L.Point(5,80)};
  function onClick4(e) {
   testMarker1.remove();
   testMarker.remove();
-  testMarker2.addTo(map).bindTooltip("<div class='unicode'><a href='#'>&#128644;</a> &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$2</span></div> <div class='unicode'>&#128251;  &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$4</span></div><div class='unicode'>&#128247; &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$4</span></div>"
- +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(10,0)}).openTooltip();
+  testMarker2.addTo(map).bindTooltip("<div class='unicode'><img src='img/radio_on.png' width='40px'><br/><span class='unicodeText'>$4</span></div><div class='unicode'><img src='img/video_on.png' width='40px'><br/><span class='unicodeText'>$4</span></div><div class='unicode'><img src='img/audios_on.png' width='40px'><br/><span class='unicodeText'>$4</span></div>"
+ +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(5,5)}).openTooltip();
 
    console.log("try to remove");
 //   $(".leaflet-tooltip").hide();
@@ -267,8 +266,8 @@ function testconsole(){
  function onClick5(e) {
    testMarker2.remove();
    testMarker.remove();
-   testMarker1.addTo(map).bindTooltip("<div class='unicode'>&#128644; &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$2</span></div> <div class='unicode'>&#128251;  &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$4</span></div><div class='unicode'>&#128247; &nbsp;&nbsp;&nbsp; <span class='unicodeText'>$4</span></div>"
-  +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(10,0)}).openTooltip();
+   testMarker1.addTo(map).bindTooltip("<div class='unicode'><img src='img/radio_on.png' width='40px'><br/><span class='unicodeText'>$4</span></div><div class='unicode'><img src='img/video_off.png' width='40px'><br/><span class='unicodeText'>$4</span></div><div class='unicode'><img src='img/audios_off.png' width='40px'><br/><span class='unicodeText'>$4</span></div>"
+  +"",{permanent: true, direction:"center", interactive: true, offset: new L.Point(5,5)}).openTooltip();
    console.log("larger stroke border")
  }
 
